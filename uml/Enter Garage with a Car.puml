@@ -1,0 +1,15 @@
+@startuml
+
+(*) -> Enter Garage
+if "garage is full"
+-down-> [full](*)
+else
+
+-down-> [not full] if "a place is booked"
+-down-> [yes] "Find booked place" as booked
+-down-> "Park the car"
+-down-> (*)
+else
+-> [no] "book a place"
+-> booked
+@enduml
